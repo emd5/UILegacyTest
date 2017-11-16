@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -94,7 +93,7 @@ public class UIIndependentNetworkTest {
         WebElement inputEmail = driver.findElement (By.name("email"));
         WebElement inputPassword = driver.findElement (By.name("password"));
         WebElement inputConfirmPassword = driver.findElement (By.name("confirm_password"));
-        inputEmail.sendKeys ("test9@yahoo.com");
+        inputEmail.sendKeys ("test10@yahoo.com");
         inputPassword.sendKeys ("Password!01");
         inputConfirmPassword.sendKeys ("Password!01");
         Thread.sleep (2000);
@@ -126,7 +125,6 @@ public class UIIndependentNetworkTest {
         WebElement goToDashboardButton= driver.findElement(By.xpath
                 ("//*[@id=\"app-container\"]/div[2]/div/div/div/div/div/div/div/div/form/div[4]/div/button"));
 
-
         JavascriptExecutor goToDashboardExecutor = (JavascriptExecutor)driver;
         goToDashboardExecutor.executeScript("arguments[0].click();", goToDashboardButton);
 
@@ -136,9 +134,9 @@ public class UIIndependentNetworkTest {
 
     }
 
-    @Ignore
-    public void testInputSignUpProfilePage2() throws InterruptedException{
-        driver.get("https://independent-work.herokuapp.com/#/signup/employer/step-two");
+    @Test
+    public void testSignOutAccount() throws InterruptedException{
+        driver.get("https://independent-work.herokuapp.com/#/dashboard");
 
     }
 
